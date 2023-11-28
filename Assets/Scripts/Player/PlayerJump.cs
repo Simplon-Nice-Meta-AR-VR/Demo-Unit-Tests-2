@@ -16,6 +16,12 @@ public class PlayerJump : MonoBehaviour, IJump
 
     private IGrounded _groundedMechanic => _groundedMechanicSerialized.Value;
 
+    public void Initialize(Rigidbody2D rb2d, IGrounded groundedMechanic)
+    {
+        _rb2d = rb2d;
+        _groundedMechanicSerialized = new SerializableInterface<IGrounded>(groundedMechanic);
+    }
+
     /// <summary>
     /// Applies a force upwards to the player.
     /// </summary>

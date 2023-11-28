@@ -44,7 +44,8 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
     "com.dbrizov.naughtyattributes": "2.1.4",
-    "net.tnrd.serializableinterface": "2.1.0"
+    "net.tnrd.serializableinterface": "2.1.0",
+    "net.tnrd.nsubstitute": "5.1.0"
   },
   "scopedRegistries": [
     {
@@ -53,6 +54,7 @@
       "scopes": [
         "com.dbrizov.naughtyattributes",
         "com.openupm",
+        "net.tnrd.nsubstitute",
         "net.tnrd.serializableinterface"
       ]
     }

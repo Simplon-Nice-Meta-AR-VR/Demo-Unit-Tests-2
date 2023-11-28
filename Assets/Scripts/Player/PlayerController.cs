@@ -18,16 +18,31 @@ public class PlayerController : MonoBehaviour
     private IMove _movementMechanic => _movementMechanicSerialized.Value;
     private IJump _jumpMechanic => _jumpMechanicSerialized.Value;
 
+    public void Initialize(IMove movementMechanic, IJump jumpMechanic)
+    {
+        _movementMechanicSerialized = new SerializableInterface<IMove>(movementMechanic);
+        _jumpMechanicSerialized = new SerializableInterface<IJump>(jumpMechanic);
+    }
 
     // Update is called once per frame
     void Update()
     {
         float horizontalInput = Input.GetAxisRaw(_horizontalAxis);
-        _movementMechanic.Move(horizontalInput);
+        Move(horizontalInput);
 
         if (Input.GetButtonDown(_jumpAxis))
         {
-            _jumpMechanic.Jump();
+            Jump();
         }
+    }
+
+    public void Move(float direction)
+    {
+        _movementMechanic.Move(direction);
+    }
+
+    public void Jump()
+    {
+        _jumpMechanic.Jump();
     }
 }

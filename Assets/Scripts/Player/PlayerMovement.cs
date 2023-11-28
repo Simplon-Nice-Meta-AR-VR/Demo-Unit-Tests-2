@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     private float _direction;
 
+    public void Initialize(Rigidbody2D rb2d)
+    {
+        _rb2d = rb2d;
+    }
+
     /// <summary>
     /// Moves the player in a direction.
     /// </summary>
